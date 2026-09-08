@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>流光提词器 · 支持</title>
+<style>
+  :root{
+    --bg:#F7F8FA; --card:#FFFFFF; --ink:#111827; --ink-2:#4B5563; --ink-3:#6B7280;
+    --line:#E5E7EB; --brand:#0C1630; --accent:#3B6CF6; --good-bg:#ECFDF5; --good-line:#A7F3D0; --good-ink:#065F46;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#0C1630; --card:#141F3B; --ink:#F3F4F6; --ink-2:#C3C9D6; --ink-3:#8E97AB;
+      --line:#26314F; --brand:#E8EDF7; --accent:#7EA0FF; --good-bg:#0E2B24; --good-line:#1F5C4A; --good-ink:#8FE3C4;
+    }
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; padding:32px 20px 72px; background:var(--bg); color:var(--ink);
+    font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue","Microsoft YaHei",sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px; margin:0 auto}
+  header{margin-bottom:28px}
+  h1{font-size:27px; line-height:1.3; margin:0 0 10px; letter-spacing:-.01em}
+  .meta{color:var(--ink-3); font-size:14px}
+  .meta span{white-space:nowrap}
+  .tldr{
+    margin:24px 0 32px; padding:18px 20px; border-radius:14px;
+    background:var(--good-bg); border:1px solid var(--good-line); color:var(--good-ink);
+  }
+  .tldr strong{display:block; margin-bottom:6px; font-size:15px}
+  .tldr p{margin:0; font-size:15px; line-height:1.7}
+  section{
+    background:var(--card); border:1px solid var(--line); border-radius:14px;
+    padding:22px 24px; margin-bottom:16px;
+  }
+  h2{font-size:18px; margin:0 0 12px; letter-spacing:-.01em}
+  p{margin:0 0 12px; color:var(--ink-2)}
+  p:last-child{margin-bottom:0}
+  ul{margin:0 0 12px; padding-left:20px; color:var(--ink-2)}
+  li{margin-bottom:7px}
+  li:last-child{margin-bottom:0}
+  strong{color:var(--ink); font-weight:600}
+  code{
+    font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;
+    background:var(--bg); border:1px solid var(--line); border-radius:5px; padding:1px 6px;
+  }
+  a{color:var(--accent)}
+  .tablewrap{overflow-x:auto; -webkit-overflow-scrolling:touch; margin-bottom:12px}
+  table{border-collapse:collapse; width:100%; min-width:520px; font-size:14.5px}
+  th,td{text-align:left; padding:11px 12px; border-bottom:1px solid var(--line); vertical-align:top}
+  th{color:var(--ink); font-weight:600; white-space:nowrap}
+  td{color:var(--ink-2)}
+  tr:last-child td{border-bottom:none}
+  /* 窄屏堆叠：关键的「是否上传」一列不能被挤进横向滚动区外 */
+  @media (max-width:560px){
+    .tablewrap{overflow-x:visible}
+    table{min-width:0; display:block}
+    thead{display:none}
+    tbody,tr,td{display:block; width:100%}
+    tr{
+      border:1px solid var(--line); border-radius:10px;
+      padding:12px 14px; margin-bottom:10px; background:var(--bg);
+    }
+    tr:last-child{margin-bottom:0}
+    td{border-bottom:none; padding:0 0 8px}
+    td:last-child{padding-bottom:0}
+    td::before{
+      content:attr(data-label); display:block;
+      font-size:12.5px; font-weight:600; color:var(--ink-3);
+      letter-spacing:.04em; margin-bottom:2px;
+    }
+    td:first-child{
+      font-size:16px; font-weight:600; color:var(--ink); padding-bottom:10px;
+    }
+    td:first-child::before{display:none}
+  }
+  .todo{
+    background:rgba(245,158,11,.14); border:1px solid rgba(245,158,11,.45);
+    border-radius:5px; padding:0 6px; font-size:14px; color:var(--ink);
+  }
+  footer{margin-top:28px; text-align:center; color:var(--ink-3); font-size:13.5px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>流光提词器</h1>
+  <div class="meta"><span>面向口播创作者的提词器</span> · <span>单机运行 · 零联网</span></div>
+</header>
+
+<section>
+  <h2>这是什么</h2>
+  <p>流光提词器把手机变成提词板：大字滚动，焦点带永远标出你该读的那一句。
+  台词与设置只存本机，语音识别与文字识别全程在设备上完成，<strong>应用不联网、不要账号</strong>。</p>
+</section>
+
+<section>
+  <h2>主要功能</h2>
+  <ul>
+    <li><strong>写台词</strong>——所见即所得编辑（加粗、高亮标记重点句）、自动保存、自定义分类；
+        支持导入 txt / md / docx，也可以拍照或从相册识别文字、用语音口述成稿。</li>
+    <li><strong>四种提词模式</strong>——自动滚动（1–10 档恒速）、手动滑动、逐段推进、
+        语音跟读（念到哪亮到哪）。</li>
+    <li><strong>提词现场</strong>——空间景深、水平镜像（配分光镜）、四套配色、开播倒计时、
+        屏幕常亮、悬浮小窗（边看别的 App 边提词）。</li>
+    <li><strong>手势</strong>——单击暂停、双击回跳、长按呼出段落目录、长按右缘调速、双指捏合调字号。</li>
+    <li><strong>练习报告</strong>——双击回跳会被记为卡壳点，句级热力标注容易吃螺丝的句子，可以只重练卡壳句。</li>
+  </ul>
+</section>
+
+<section>
+  <h2>常见问题</h2>
+  <p><strong>台词会上传吗？</strong>不会。应用没有任何网络请求代码，台词只存在你的设备里。</p>
+  <p><strong>为什么开启语音功能时，系统提示「语音数据将发送给 Apple」？</strong>
+  那是 iOS 统一给出的固定文案。本应用强制使用端侧识别，语音不出设备；
+  设备不支持端侧中文识别时会提示不可用，不会退回服务端识别。详见
+  <a href="privacy.html">隐私政策</a>。</p>
+  <p><strong>换设备了，数据怎么带走？</strong>「我的 → 导出完整备份」会导出一个 json 文件
+  （含台词、分类、设置、练习记录与累计统计），在新设备上用「从备份恢复」导入即可。
+  <strong>卸载应用会彻底删除全部数据，请先导出。</strong></p>
+  <p><strong>支持 pdf 导入吗？</strong>暂不支持，目前支持 txt / md / docx。</p>
+  <p><strong>悬浮小窗和语音跟读在模拟器上用不了？</strong>这两项需要真机：模拟器不渲染画中画，
+  也没有端侧中文识别器。</p>
+</section>
+
+<section>
+  <h2>联系我们</h2>
+  <p>使用问题、功能建议或 Bug 反馈，请发邮件到
+  <a href="mailto:support@hengchuanai.com">support@hengchuanai.com</a>。</p>
+  <p><a href="privacy.html">隐私政策</a></p>
+</section>
+
+<footer>无锡市恒川承序智能科技有限公司</footer>
+</div>
+</body>
+</html>
